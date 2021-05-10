@@ -48,7 +48,6 @@ class _AuthFormState extends State<AuthForm> {
           content: Text('Please pick an image'),
           backgroundColor: Theme.of(context).errorColor,
         ),
-        
       );
       return;
     }
@@ -81,6 +80,9 @@ class _AuthFormState extends State<AuthForm> {
                 if (!_isLogin) UserImagePicker(_pickedImage),
                 TextFormField(
                   key: ValueKey('email'),
+                  autocorrect: false,
+                  textCapitalization: TextCapitalization.none,
+                  enableSuggestions: false,
                   validator: (value) {
                     if (value.isEmpty || !value.contains('@')) {
                       return 'Please enter a valid Email Address.';
@@ -98,6 +100,9 @@ class _AuthFormState extends State<AuthForm> {
                 if (!_isLogin)
                   TextFormField(
                     key: ValueKey('username'),
+                    autocorrect: true,
+                    textCapitalization: TextCapitalization.words,
+                    enableSuggestions: false,
                     validator: (value) {
                       if (value.isEmpty || value.length < 4) {
                         return 'Please enter atleast 4 characters';

@@ -7,12 +7,15 @@ import '../widgets/chat/messages.dart';
 
 class ChatScreen extends StatelessWidget {
   @override
+  
+
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text('Your Chats !'),
         actions: [
           DropdownButton(
+            underline: Container(),
             icon: Icon(
               Icons.more_vert,
               color: Theme.of(context).primaryIconTheme.color,
